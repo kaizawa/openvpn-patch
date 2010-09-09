@@ -1,0 +1,13 @@
+How to apply
+
+ By replacing file
+    Put tun.c on the directory where you extracted source code of OpenVPN, and swap existing tun.c file for it.
+
+ By patch(1) command
+    You can find patch file on "Download" tab of this project.
+    Download patch.openvpn-xxx.tun.c file and then run patch(1) command like as below.
+
+        $ patch -p1 < patch.openvpn-xxxx.tun.c
+          
+NOTE: Please download appropriate file which correspond to the version of OpenVPN.
+Otherwise, you'll get an error while building a openvpn binary. 
