@@ -702,6 +702,18 @@ do_ifconfig (struct tuntap *tt,
 			    );
 	}
       else
+        if (tt->topology == TOP_SUBNET)
+          argv_printf (&argv,
+                              "%s %s %s %s netmask %s mtu %d up",
+
+                              IFCONFIG_PATH,
+                              actual,
+                              ifconfig_local,
+                              ifconfig_local,
+                              ifconfig_remote_netmask,
+                              tun_mtu
+                              );
+        else
           argv_printf (&argv,
                             " %s %s %s netmask %s broadcast + up",
                             IFCONFIG_PATH,
